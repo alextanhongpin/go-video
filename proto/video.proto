@@ -1,0 +1,21 @@
+syntax = "proto3";
+package video;
+
+import "google/api/annotations.proto";
+
+message GetVideosRequest {
+  string query = 1;
+}
+
+message GetVideosResponse {
+  string query = 1;
+}
+
+service VideoService {
+  rpc Echo(GetVideosRequest) returns (GetVideosResponse) {
+    option (google.api.http) = {
+      post: "/v1/videos",
+      body: "*"
+    };
+  }
+}
