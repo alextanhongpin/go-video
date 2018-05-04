@@ -12,10 +12,9 @@ message GetVideosResponse {
 }
 
 service VideoService {
-  rpc Echo(GetVideosRequest) returns (GetVideosResponse) {
+  rpc GetVideos(GetVideosRequest) returns (GetVideosResponse) {
     option (google.api.http) = {
-      post: "/v1/videos",
-      body: "*"
+      get: "/v1/videos"
     };
   }
 }
