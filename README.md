@@ -62,3 +62,17 @@ $ find ./proto/**.proto -exec \
 ## Notes
 
 The above commands can be inlined in the code through `go generate`. However, for readability a Makefile is preferred.
+
+
+## Installing ffmpeg
+
+```
+# Install the `exodus_bundler` package, if you haven't already.
+pip install --user exodus_bundler
+export PATH="${HOME}/.local/bin/:${PATH}"
+
+# Create an `ffmpeg` bundle and extract it in the current directory.
+exodus --tarball ffmpeg | tar -zx
+```
+
+- https://intoli.com/blog/transcoding-on-aws-lambda/
